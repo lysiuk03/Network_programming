@@ -5,32 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_03_HTTP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
-        <Grid DockPanel.Dock="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" ></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="Auto" ></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition  Width="Auto" ></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="Auto" ></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Label FontSize="20">Size:</Label>
-            <TextBox FontSize="20" x:Name="width"  Margin="3" Grid.Column="1"></TextBox>
-            <Label FontSize="20" Grid.Column="2">x</Label>
-            <TextBox FontSize="20" x:Name="height" Margin="3" Grid.Column="3"></TextBox>
-            <Label FontSize="20" Grid.Column="4">Category:</Label>
-            <ComboBox Name="category"  FontSize="20" IsReadOnly="False" Margin="3" Grid.Column="5">
-                <ComboBoxItem IsSelected="True">Nature</ComboBoxItem>
-                <ComboBoxItem>Travel</ComboBoxItem>
-                <ComboBoxItem>Architecture</ComboBoxItem>
-                <ComboBoxItem>Film</ComboBoxItem>
-            </ComboBox>
-            <Button Name="folder" Click="folder_Click" FontSize="20" Grid.Column="6" Margin="3">Select a folder</Button>
-        </Grid>
-        <Button x:Name="Donwload" Click="Donwload_ClickAsync" DockPanel.Dock="Bottom" Margin="3" FontSize="20">Donwload</Button>
-        <Image Name="image"></Image>
-    </DockPanel>
+        Title="MainWindow" Height="500" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition  Width="Auto" ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label FontSize="20">Size:</Label>
+                <TextBox FontSize="20" x:Name="width"  Margin="3" Grid.Column="1"></TextBox>
+                <Label FontSize="20" Grid.Column="2">x</Label>
+                <TextBox FontSize="20" x:Name="height" Margin="3" Grid.Column="3"></TextBox>
+                <Label FontSize="20" Grid.Column="4">Category:</Label>
+                <ComboBox Name="category"  FontSize="20" IsReadOnly="False" Margin="3" Grid.Column="5">
+                    <ComboBoxItem IsSelected="True">Nature</ComboBoxItem>
+                    <ComboBoxItem>Travel</ComboBoxItem>
+                    <ComboBoxItem>Architecture</ComboBoxItem>
+                    <ComboBoxItem>Film</ComboBoxItem>
+                </ComboBox>
+                <Button Name="folder" Click="folder_Click" FontSize="20" Grid.Column="6" Margin="3">Select a folder</Button>
+            </Grid>
+            <DockPanel DockPanel.Dock="Bottom">
+                <Button DockPanel.Dock="Right" Click="Cancel_Click" Name="Cancel" Margin="3" FontSize="20">Cancel</Button>
+                <Button x:Name="Donwload" Click="Donwload_ClickAsync"  Margin="3" FontSize="20">Donwload</Button>
+
+            </DockPanel>
+
+            <Image Name="image"></Image>
+        </DockPanel>
+        <DockPanel Grid.Column="1" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Top" FontSize="20" HorizontalAlignment="Center" Margin="5">History:</TextBlock>
+            <ListBox SelectionChanged="history_SelectionChanged"  x:Name="history" FontSize="16"></ListBox>
+        </DockPanel>
+    </Grid>
+    
 </Window>

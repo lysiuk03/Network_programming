@@ -1,19 +1,11 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 
 namespace _03_HTTP
 {
@@ -27,7 +19,7 @@ namespace _03_HTTP
         public MainWindow()
         {
             InitializeComponent();
-            FolderPath= Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         }
 
         private async void Donwload_ClickAsync(object sender, RoutedEventArgs e)
@@ -49,11 +41,19 @@ namespace _03_HTTP
         }
         private async Task DownloadImageAsync(string url)
         {
-              string name = Path.GetRandomFileName();
-              name = Path.ChangeExtension(name, "jpg");
-              string dest = Path.Combine(FolderPath, name);
-             await client.DownloadFileTaskAsync(url, dest);
-           image.Source=new BitmapImage(new Uri(dest));
+            string name = Path.GetRandomFileName();
+            name = Path.ChangeExtension(name, "jpg");
+            string dest = Path.Combine(FolderPath, name);
+            try
+            {
+                await client.DownloadFileTaskAsync(url, dest);
+                image.Source = new BitmapImage(new Uri(dest));
+                history.Items.Add(dest);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Download canceled. " + ex.Message);
+            }
         }
 
         private void folder_Click(object sender, RoutedEventArgs e)
@@ -64,6 +64,18 @@ namespace _03_HTTP
             {
                 FolderPath = dialog.FileName;
             }
+        }
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (client.IsBusy)
+            {
+                client.CancelAsync();
+            }
+        }
+
+        private void history_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            image.Source = new BitmapImage(new Uri(history.SelectedItem.ToString()));
         }
     }
 }
