@@ -1,0 +1,70 @@
+﻿<Window x:Class="_02_Mail_Protocol_SMTP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_Mail_Protocol_SMTP"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600" Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="#FF4A464D"/>
+            <Setter Property="FontWeight" Value="Heavy"/>
+            <Setter Property="Margin" Value="3"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+            <Setter Property="BorderThickness" Value="3"></Setter>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="#FF4A464D"/>
+            <Setter Property="FontWeight" Value="Heavy"/>
+            <Setter Property="Margin" Value="3"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+    </Window.Resources>
+    
+    <DockPanel LastChildFill="True">
+
+        <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+            <Button Click="outbtn_Click" x:Name="outbtn" DockPanel.Dock="Right">Sign out</Button>
+            <Button Click="inbtn_Click" x:Name="inbtn" DockPanel.Dock="Right">Sign in</Button>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="true">
+            <ComboBox DockPanel.Dock="Right" Name="priority" FontSize="18" IsReadOnly="False" VerticalAlignment="Center" Margin="3">
+                <ComboBoxItem IsSelected="True">Low</ComboBoxItem>
+                <ComboBoxItem>Normal</ComboBoxItem>
+                <ComboBoxItem>High</ComboBoxItem>
+            </ComboBox>
+            <TextBlock DockPanel.Dock="Right">Priority:</TextBlock>
+            <Button Click="sendbtn_Click" x:Name="sendbtn" DockPanel.Dock="Right" >Send</Button>
+        </DockPanel>
+        <ListBox x:Name="filelist" DockPanel.Dock="Bottom"></ListBox>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="false">
+            
+            <Button  DockPanel.Dock="Right" Click="delete_Click" x:Name="deletebtn">Delete</Button>
+            <Button DockPanel.Dock="Right" Click="attachbtn_Click" x:Name="attachbtn" >Attach File</Button>
+            
+        </DockPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" Background="ForestGreen" Foreground="Black">New message</TextBlock>
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock>To:</TextBlock>
+                <TextBox Name="totb" Margin="5" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="0"></TextBox>
+                <TextBlock Grid.Column="0" Grid.Row="1">Subject:</TextBlock>
+                <TextBox Name="subjecttb" Margin="5" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1"></TextBox>
+            </Grid>
+            <TextBox x:Name="contenttb"></TextBox>
+        </DockPanel>
+    </DockPanel>
+</Window>

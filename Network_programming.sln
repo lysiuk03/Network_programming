@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Server", "01_Server\01_S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Client", "01_Client\01_Client.csproj", "{C1F365B6-1504-4DD1-9D05-03B2AB9B8496}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Mail_Protocol_SMTP", "02_Mail_Protocol_SMTP\02_Mail_Protocol_SMTP.csproj", "{BA0A9CD9-53BD-45B6-9BB8-7F33FFFBDE8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_HTTP", "03_HTTP\03_HTTP.csproj", "{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{C1F365B6-1504-4DD1-9D05-03B2AB9B8496}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1F365B6-1504-4DD1-9D05-03B2AB9B8496}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1F365B6-1504-4DD1-9D05-03B2AB9B8496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0A9CD9-53BD-45B6-9BB8-7F33FFFBDE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0A9CD9-53BD-45B6-9BB8-7F33FFFBDE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0A9CD9-53BD-45B6-9BB8-7F33FFFBDE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0A9CD9-53BD-45B6-9BB8-7F33FFFBDE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
