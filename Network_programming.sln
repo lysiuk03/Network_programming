@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Client", "01_Client\01_C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Mail_Protocol_SMTP", "02_Mail_Protocol_SMTP\02_Mail_Protocol_SMTP.csproj", "{BA0A9CD9-53BD-45B6-9BB8-7F33FFFBDE8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_HTTP", "03_HTTP\03_HTTP.csproj", "{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_HTTP", "03_HTTP\03_HTTP.csproj", "{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_UDP_chat_client", "04_UDP_chat_client\04_UDP_chat_client.csproj", "{2630CDEA-3813-4A8C-83FF-C7A63B989676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_UDP_chat_server", "04_UDP_chat_server\04_UDP_chat_server.csproj", "{505412E7-ED5D-4E1E-87AF-44644A06E190}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{353A3A8F-4541-47B0-B51B-78C7BDDC17AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2630CDEA-3813-4A8C-83FF-C7A63B989676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2630CDEA-3813-4A8C-83FF-C7A63B989676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2630CDEA-3813-4A8C-83FF-C7A63B989676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2630CDEA-3813-4A8C-83FF-C7A63B989676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{505412E7-ED5D-4E1E-87AF-44644A06E190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505412E7-ED5D-4E1E-87AF-44644A06E190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505412E7-ED5D-4E1E-87AF-44644A06E190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505412E7-ED5D-4E1E-87AF-44644A06E190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
